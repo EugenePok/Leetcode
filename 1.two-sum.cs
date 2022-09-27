@@ -7,7 +7,7 @@
 // @lc code=start
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
-        //Create a hash table with key as target searching and value as index matched.
+        //Create a hash table with key as target searching and value as index matched
         Hashtable dic = new Hashtable();
 
         for(int i = 0; i < nums.Length; i++){
