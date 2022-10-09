@@ -1,0 +1,15 @@
+/Users/eugenepok/leetcode/Leetcode/console/bin/Debug/net6.0/console
+/Users/eugenepok/leetcode/Leetcode/console/bin/Debug/net6.0/console.deps.json
+/Users/eugenepok/leetcode/Leetcode/console/bin/Debug/net6.0/console.runtimeconfig.json
+/Users/eugenepok/leetcode/Leetcode/console/bin/Debug/net6.0/console.dll
+/Users/eugenepok/leetcode/Leetcode/console/bin/Debug/net6.0/console.pdb
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.csproj.AssemblyReference.cache
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.AssemblyInfoInputs.cache
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.AssemblyInfo.cs
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.csproj.CoreCompileInputs.cache
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.dll
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/refint/console.dll
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.pdb
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/console.genruntimeconfig.cache
+/Users/eugenepok/leetcode/Leetcode/console/obj/Debug/net6.0/ref/console.dll
