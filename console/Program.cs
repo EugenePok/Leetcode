@@ -1,30 +1,25 @@
 ﻿using System.Collections;
 
-ListNode MergeTwoLists(ListNode list1, ListNode list2) {
-    ListNode start = new ListNode(-1);
-    ListNode curr = start;
-    while(list1 != null && list2 != null){
-        if(list1.val < list2.val){
-            curr.next = list1;
-            list1 = list1.next;
+bool IsPalindrome(string s) {
+    int l = 0;
+    int r = s.Length - 1;
+    char left = Char.ToLower(s[l]);
+    char right = Char.ToLower(s[r]);
+    while(l < r){
+        if(left >= 97 && left <= 122 && right >= 97 && right <= 122){
+            if (left != right) return false;
+            else {
+                left = Char.ToLower(s[++l]);
+                right = Char.ToLower(s[--r]);
+                continue;
+            }
         }
-        else{
-            curr.next = list2;
-            list2 = list2.next;
-        }
-        curr = curr.next;
+        if(left < 97 || left > 122)
+            left = Char.ToLower(s[++l]);
+        if((right < 97 || right > 122))
+            right = Char.ToLower(s[--r]);
     }
-    curr.next = list1 == null ? list2 : list1;
-
-    return start.next;
+    return true;
 }
 
-var list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
-var list2 = new ListNode(1, new ListNode(3, new ListNode(5)));
-
-var result = MergeTwoLists(list1,list2);
-while(result != null){
-    Console.Write(result.val);
-    Console.Write(" ");
-    result = result.next;
-}
+Console.WriteLine(IsPalindrome("0P"));
