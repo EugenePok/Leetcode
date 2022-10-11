@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1L/1EDwul45d0okSq7cfFsqbUpYZzJDZsgwi9/PF30z6rf/WwPZIsg5xiJd/svkwiD5u2UF0butoDgml++4BGw==",
+  "dgSpecHash": "DRmEhl3/l73jHXWRsvvsuNP0OwCjyRBeSpwL/beFqnNF4Z0sWwmIqVf1py2ZeD+cEnxgFkbqadLaTeaIviw3Og==",
   "success": true,
-  "projectFilePath": "/Users/eugenepok/leetcode/Leetcode/console/console.csproj",
+  "projectFilePath": "C:\\Users\\eugene.pok\\.leetcode\\console\\console.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
