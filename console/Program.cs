@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 
-int Search(int[] nums, int target) {
-        int low = 0;
-        int high = nums.Length - 1;
-        int mid = Mid(low,high);
-        while(low < high){
-            if(target > nums[mid])
-                low = mid + 1;
-            else 
-                high = mid;
-            mid = Mid(low,high); 
-        }
-        return target == nums[low] ? mid : -1;  
-    }
-int Mid(int low, int high) => low + (high-low) / 2;
+int dfsHeight (TreeNode root) {
+    if (root == null) return 0;
+    
+    int leftHeight = dfsHeight (root.left);
+    if (leftHeight == -1) return -1;
+    int rightHeight = dfsHeight (root.right);
+    if (rightHeight == -1) return -1;
+    
+    if (Math.Abs(leftHeight - rightHeight) > 1)  
+        return -1;
+    return Math.Max(leftHeight, rightHeight) + 1;
+}
+bool isBalanced(TreeNode root) {
+    return dfsHeight (root) != -1;
+}
 
-Console.WriteLine(Search(new int[]{ -1,0,3,5,9,12 }, 9));
+Console.WriteLine(isBalanced(new TreeNode(1,new TreeNode(2, 
+new TreeNode(3), new TreeNode(3)))));
