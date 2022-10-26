@@ -1,17 +1,9 @@
 ﻿using System.Collections;
 
-bool HasCycle(ListNode head) {
-    ListNode walker = head;
-    ListNode runner = head;
-    while(runner!=null && runner.next!=null) {
-        walker = walker.next;
-        runner = runner.next.next;
-        if(walker==runner) return true;
-    }
-    return false;     
-}
-
-ListNode key = new ListNode(2);
-ListNode back = new ListNode(0, new ListNode(4, key));
-key.next = back;
-Console.WriteLine(HasCycle(new ListNode(3, key)));
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1]
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.push(3);
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
