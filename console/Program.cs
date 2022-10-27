@@ -1,9 +1,18 @@
 ﻿using System.Collections;
 
-MyQueue myQueue = new MyQueue();
-myQueue.push(1); // queue is: [1]
-myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
-myQueue.peek(); // return 1
-myQueue.push(3);
-myQueue.pop(); // return 1, queue is [2]
-myQueue.empty(); // return false
+int FirstBadVersion(int n) {
+    int start = 1;
+    int end = n;
+    while(start < end){
+        int mid = start + (end-start)/2;
+        if(IsBadVersion(mid))
+            end = mid;
+        else
+            start = mid + 1;
+    }
+    return start;
+}
+
+bool IsBadVersion(int n) => n >= 4;
+
+Console.WriteLine(FirstBadVersion(20));
