@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 
-int FirstBadVersion(int n) {
-    int start = 1;
-    int end = n;
-    while(start < end){
-        int mid = start + (end-start)/2;
-        if(IsBadVersion(mid))
-            end = mid;
-        else
-            start = mid + 1;
+string ExtendString(string s, int i, int j){
+    for(;i >= 0 && j < s.Length; i--, j++){
+        if(s[i] != s[j]) break;
     }
-    return start;
+    return s.Substring(i + 1, j - i - 1);
 }
 
-bool IsBadVersion(int n) => n >= 4;
+string LongestPalindrome(string s) {
+    string max = "";
+    for(int i=0;i< s.Length; i++){
+        string s1 = ExtendString(s,i,i), s2 = ExtendString(s, i, i+1);
+        if(s1.Length > max.Length) max = s1;
+        if(s2.Length > max.Length) max = s2;
+    }
+    return max;
+}
 
-Console.WriteLine(FirstBadVersion(20));
+Console.WriteLine(LongestPalindrome("cbbd"));
