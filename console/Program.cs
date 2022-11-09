@@ -1,18 +1,19 @@
 ﻿using System.Collections;
+using System.Text;
 
-int FirstBadVersion(int n) {
-    int start = 1;
-    int end = n;
-    while(start < end){
-        int mid = start + (end-start)/2;
-        if(IsBadVersion(mid))
-            end = mid;
-        else
-            start = mid + 1;
+string AddBinary(string a, string b) {
+    StringBuilder sb = new StringBuilder();
+    int i = a.Length - 1, j = b.Length - 1, carry = 0;
+    while(i >= 0 || j >= 0)
+    {
+        int sum = carry;
+        if(i >= 0) sum += a[i--] - '0';
+        if(j >= 0) sum += b[j--] - '0';
+        sb.Append(sum % 2);
+        carry = sum/2;
     }
-    return start;
+    if(carry != 0) sb.Append(carry);
+    return new string(sb.ToString().Reverse().ToArray());
 }
 
-bool IsBadVersion(int n) => n >= 4;
-
-Console.WriteLine(FirstBadVersion(20));
+Console.WriteLine(AddBinary("111010","1011"));
