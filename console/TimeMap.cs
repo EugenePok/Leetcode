@@ -1,0 +1,39 @@
+public class TimeMap
+{
+    Dictionary<string, List<(int, string)>> Hash;
+    public TimeMap()
+    {
+        Hash = new();
+    }
+
+    public void Set(string key, string value, int ts)
+    {
+        if (!Hash.ContainsKey(key))
+            Hash.Add(key, new());
+        Hash[key].Add((ts, value));
+    }
+
+    public string Get(string key, int ts)
+    {
+        string result = string.Empty;
+        if (!Hash.ContainsKey(key))
+            return result;
+        var arr = Hash[key];
+        int lo = 0, hi = arr.Count() - 1;
+        while (lo <= hi)
+        {
+            int mid = lo + (hi - lo) / 2;
+            //If we do not have exact timestamp, find the most recent one before it
+            if (arr[mid].Item1 == ts)
+                return arr[mid].Item2;
+            else if (arr[mid].Item1 < ts)
+            {
+                result = arr[mid].Item2;
+                lo = mid + 1;
+            }
+            else
+                hi = mid - 1;
+        }
+        return result;
+    }
+}
